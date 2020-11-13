@@ -14,5 +14,14 @@ namespace BibliotecaByteBank
         public string nome { get; set; }
         public string cpf { get; set; }
         public string profissao { get; set; }
+        public override bool Equals(object obj)
+        {
+            Cliente outroCliente = obj as Cliente;
+            if (outroCliente == null)
+            {
+                return false;
+            }
+            return this.cpf == outroCliente.cpf;
+        }
     }
 }

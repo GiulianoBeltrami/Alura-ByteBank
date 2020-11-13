@@ -99,6 +99,11 @@ namespace BibliotecaByteBank
             //pode transferir pois tem saldo
             contaDestino.Depositar(valor); // deposita o valor transferido em outra conta
         }
+        public override string ToString()
+        {
+            return $"Numero da conta: {NumeroConta}\n" +
+                   $"Número da agência: {NumeroAgencia}";
+        }
     }
 }
 
