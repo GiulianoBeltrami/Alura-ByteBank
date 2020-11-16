@@ -104,6 +104,15 @@ namespace BibliotecaByteBank
             return $"Numero da conta: {NumeroConta}\n" +
                    $"Número da agência: {NumeroAgencia}";
         }
+        public override bool Equals(object obj)
+        {
+            ContaCorrente outraConta = obj as ContaCorrente;
+            if (outraConta==null)
+            {
+                return false;
+            }
+            return NumeroAgencia == outraConta.NumeroAgencia && NumeroConta == outraConta.NumeroAgencia;
+        }
     }
 }
 

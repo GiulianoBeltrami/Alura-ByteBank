@@ -20,10 +20,72 @@ namespace ByteBank.SistemaAgencia
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
 
         {
-            //string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
+            int[] num = new int[5] {1,2,3,4,5 };
+
+            SomarNumeros(num);
+
+
+
+            Console.ReadLine();
+        }
+
+        //{1,2,3,4} -> 1+2  
+        //             3+4
+        static void SomarNumeros(int[] numeros)
+        {
+            //1,2,3,4
+            //[0],[1],[2],[3]
+
+            for (int i = 0; i < numeros.Length-1;i+=2)
+            {
+                int primeiroNumero = numeros[i];
+                int segundoNumero = numeros[i+1];
+                int soma = primeiroNumero + segundoNumero;
+                Console.WriteLine($"{primeiroNumero}+{segundoNumero}={soma}");
+                Console.WriteLine(i);
+            }
+        }
+
+        static void TestaArrayDeContaCorrente() 
+        {
+            ContaCorrente[] contas = new ContaCorrente[]
+                {
+                new ContaCorrente(1239, 32412), //[0]
+                new ContaCorrente(1234, 22412), //[1]
+                new ContaCorrente(1237, 36412)  //[2]
+                };
+        }
+        static void TestaArrayInt()
+        {
+            //array : coleção de elementos que podem ser resgatados por índices
+            int[] idades = new int[5]; //array(lista) com índices de inteiros que possuem 5 posições
+            idades[0] = 15;
+            idades[1] = 28;
+            idades[2] = 35;
+            idades[3] = 50;
+            idades[4] = 28;
+
+            int idades_ = 0;
+            for (int contador = 0; contador < idades.Length; contador++)
+            {
+                idades_ = idades_ + idades[contador];
+            }
+
+            Console.WriteLine(idades_ / idades.Length);
+
+        }
+    }
+}
+
+
+
+
+
+/*
+     //string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
             string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=XXXX&valor=1500";
             ExtratorValorDeArgumentosURL extrator = new ExtratorValorDeArgumentosURL(urlParametros);
             Console.WriteLine(extrator.GetValor("MOEDAORIGEM"));
@@ -41,10 +103,5 @@ namespace ByteBank.SistemaAgencia
             Cliente cliente2 = new Cliente();
             cliente2.cpf = "123";
 
-            Console.WriteLine(cliente1.Equals(cliente2));
-
-            Console.ReadLine();
-        }
-       
-    }
-}
+            Console.WriteLine(cliente1.Equals(cliente2)); 
+ */
