@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using ByteBank.SistemaAgencia;
 using BibliotecaByteBank;
 /*
     using Humanizer;
@@ -21,14 +22,9 @@ namespace ByteBank.SistemaAgencia
     public class Program
     {
         public static void Main(string[] args)
-
         {
-            int[] num = new int[5] {1,2,3,4,5 };
-
-            SomarNumeros(num);
-
-
-
+            Lista<int> listaIdade = new Lista<int>();
+            
             Console.ReadLine();
         }
 
